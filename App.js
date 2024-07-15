@@ -1,25 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View} from 'react-native';
-import Splashscreen from './Screens/SplashScreen';
+import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import BottomTabNavigator from './Navigators/BottomTabNavigator';
-// import TopTabNavigator from './Navigators/TopTabNavigator';
+import MainScreenNavigator from './Framework/Navigators/MainScreenNavigator';
 
 
 export default function App() {
   return (
-    <NavigationContainer style={styles.container}>
-      {/* <Splashscreen /> */}
-      <BottomTabNavigator />
-      {/* <TopTabNavigator /> */}
-      <StatusBar style="auto"/>
+    <NavigationContainer>
+      <MainScreenNavigator />
+      <StatusBar style="auto" barStyle={'light-content'}/>
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#097c80',
-  },
-});
